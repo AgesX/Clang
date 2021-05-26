@@ -36,5 +36,9 @@ auto &Runtime = CGM.getLangOpts().ObjCRuntime;
 ```
 
 
+#### 2,  GeneratePossiblySpecializedMessageSend
 
+调用 tryGenerateSpecializedMessageSend
+
+走  OMF_alloc
 

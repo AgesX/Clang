@@ -441,6 +441,17 @@ tryGenerateSpecializedMessageSend(CodeGenFunction &CGF, QualType ResultType,
   return None;
 }
 
+
+
+
+
+
+
+// 系统标记了，很多特殊方法， alloc 
+
+
+
+
 CodeGen::RValue CGObjCRuntime::GeneratePossiblySpecializedMessageSend(
     CodeGenFunction &CGF, ReturnValueSlot Return, QualType ResultType,
     Selector Sel, llvm::Value *Receiver, const CallArgList &Args,
@@ -449,11 +460,32 @@ CodeGen::RValue CGObjCRuntime::GeneratePossiblySpecializedMessageSend(
   if (Optional<llvm::Value *> SpecializedResult =
           tryGenerateSpecializedMessageSend(CGF, ResultType, Receiver, Args,
                                             Sel, Method, isClassMessage)) {
+
+       // 发送消息时，先判断一下                                 
+       // 这个判断中，必然会走 objc_alloc
+
+
     return RValue::get(SpecializedResult.getValue());
   }
+  // 自定义类的 alloc 走两次
+  // 上面判断走一次， 返回 false, 条件不满足
+  // 接着走下面的
+
+
+
+  // 下面的方法，就是普通的 alloc 方法
+  // 普通消息的发送
+  // sel = alloc
   return GenerateMessageSend(CGF, Return, ResultType, Sel, Receiver, Args, OID,
                              Method);
 }
+
+
+
+
+
+
+
 
 /// Instead of '[[MyClass alloc] init]', try to generate
 /// 'objc_alloc_init(MyClass)'. This provides a code size improvement on the
