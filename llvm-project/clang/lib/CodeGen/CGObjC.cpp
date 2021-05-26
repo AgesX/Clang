@@ -384,9 +384,15 @@ tryGenerateSpecializedMessageSend(CodeGenFunction &CGF, QualType ResultType,
     if (isClassMessage &&
         Runtime.shouldUseRuntimeFunctionsForAlloc() &&
         ResultType->isObjCObjectPointerType()) {
-        // [Foo alloc] -> objc_alloc(Foo) or
+
+
+        // [Foo alloc] -> （  有一个转换  ）  objc_alloc(Foo) or
+
         // [self alloc] -> objc_alloc(self)
         if (Sel.isUnarySelector() && Sel.getNameForSlot(0) == "alloc")
+
+
+          // 如果 selector 是 alloc, 请去调用下面的方法
           return CGF.EmitObjCAlloc(Receiver, CGF.ConvertType(ResultType));
         // [Foo allocWithZone:nil] -> objc_allocWithZone(Foo) or
         // [self allocWithZone:nil] -> objc_allocWithZone(self)
@@ -401,6 +407,10 @@ tryGenerateSpecializedMessageSend(CodeGenFunction &CGF, QualType ResultType,
         }
     }
     break;
+
+
+
+
 
   case OMF_autorelease:
     if (ResultType->isObjCObjectPointerType() &&
@@ -2601,6 +2611,13 @@ llvm::Value *CodeGenFunction::EmitObjCMRRAutoreleasePoolPush() {
   return InitRV.getScalarVal();
 }
 
+
+
+
+
+// selector, 是 alloc
+// 则调用另一个方法
+
 /// Allocate the given objc object.
 ///   call i8* \@objc_alloc(i8* %value)
 llvm::Value *CodeGenFunction::EmitObjCAlloc(llvm::Value *value,
@@ -2609,6 +2626,9 @@ llvm::Value *CodeGenFunction::EmitObjCAlloc(llvm::Value *value,
                                 CGM.getObjCEntrypoints().objc_alloc,
                                 "objc_alloc");
 }
+
+
+
 
 /// Allocate the given objc object.
 ///   call i8* \@objc_allocWithZone(i8* %value)
