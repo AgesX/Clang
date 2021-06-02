@@ -287,6 +287,17 @@ public:
         Types.GetFunctionType(
           Types.arrangeBuiltinFunctionDeclaration(Ctx.VoidTy, Params));
     const char *name;
+
+
+
+
+  //    objc_setPropertyK
+  //    看这里
+
+
+
+
+
     if (atomic && copy)
       name = "objc_setProperty_atomic_copy";
     else if (atomic && !copy)
