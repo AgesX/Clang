@@ -2417,9 +2417,28 @@ llvm::Value *CodeGenFunction::EmitARCStoreStrongCall(Address addr,
   return value;
 }
 
+
+
+
+
+
+
+
+
+
 /// Store into a strong object.  Sometimes calls this:
 ///   call void \@objc_storeStrong(i8** %addr, i8* %value)
 /// Other times, breaks it down into components.
+
+
+
+
+
+// 走这里
+// copy 修饰符
+
+
+
 llvm::Value *CodeGenFunction::EmitARCStoreStrong(LValue dst,
                                                  llvm::Value *newValue,
                                                  bool ignored) {

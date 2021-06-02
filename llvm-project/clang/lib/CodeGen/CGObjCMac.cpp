@@ -317,8 +317,30 @@ public:
     else
       name = "objc_setProperty_nonatomic";
 
+
+
+
+    // 运行时，动态自动，创建函数
+
+
+
     return CGM.CreateRuntimeFunction(FTy, name);
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   llvm::FunctionCallee getCopyStructFn() {
     CodeGen::CodeGenTypes &Types = CGM.getTypes();

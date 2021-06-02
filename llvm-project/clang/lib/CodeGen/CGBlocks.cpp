@@ -68,6 +68,10 @@ namespace {
 
 /// Represents a type of copy/destroy operation that should be performed for an
 /// entity that's captured by a block.
+
+
+
+// 策略 类型
 enum class BlockCaptureEntityKind {
   CXXRecord, // Copy or destroy
   AddressDiscriminatedPointerAuth,
@@ -77,6 +81,10 @@ enum class BlockCaptureEntityKind {
   BlockObject, // Assign or release
   None
 };
+
+
+
+
 
 /// Represents a captured entity that requires extra operations in order for
 /// this entity to be copied or destroyed correctly.
@@ -1964,6 +1972,23 @@ static void setBlockHelperAttributesVisibility(bool CapturesNonExternalType,
     CGM.SetLLVMFunctionAttributesForDefinition(nullptr, Fn);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+//  看这里
+
+
+
+
 /// Generate the copy-helper function for a block closure object:
 ///   static void block_copy_helper(block_t *dst, block_t *src);
 /// The runtime will have previously initialized 'dst' by doing a
@@ -1972,6 +1997,8 @@ static void setBlockHelperAttributesVisibility(bool CapturesNonExternalType,
 /// Note that this copies an entire block closure object to the heap;
 /// it should not be confused with a 'byref copy helper', which moves
 /// the contents of an individual __block variable to the heap.
+
+
 llvm::Constant *
 CodeGenFunction::GenerateCopyHelperFunction(const CGBlockInfo &blockInfo) {
   SmallVector<BlockCaptureManagedEntity, 4> CopiedCaptures;
@@ -2043,12 +2070,29 @@ CodeGenFunction::GenerateCopyHelperFunction(const CGBlockInfo &blockInfo) {
     Address srcField = Builder.CreateStructGEP(src, index);
     Address dstField = Builder.CreateStructGEP(dst, index);
 
+
+
+
+
+
+
+    // 依据选项处理
+
+
     switch (CopiedCapture.CopyKind) {
     case BlockCaptureEntityKind::CXXRecord:
+      // C++ 类型
+
+
+
       // If there's an explicit copy expression, we do that.
       assert(CI.getCopyExpr() && "copy expression for variable is missing");
       EmitSynthesizedCXXCopyCtor(dstField, srcField, CI.getCopyExpr());
       break;
+
+
+
+
     case BlockCaptureEntityKind::ARCWeak:
       EmitARCCopyWeak(dstField, srcField);
       break;
