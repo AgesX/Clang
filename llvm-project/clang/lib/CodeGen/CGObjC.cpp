@@ -1366,6 +1366,24 @@ static bool UseOptimizedSetter(CodeGenModule &CGM) {
   return CGM.getLangOpts().ObjCRuntime.hasOptimizedSetter();
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 入口， step one
+
+
+
+// 看这里
 void
 CodeGenFunction::generateObjCSetterBody(const ObjCImplementationDecl *classImpl,
                                         const ObjCPropertyImplDecl *propImpl,
@@ -1388,6 +1406,14 @@ CodeGenFunction::generateObjCSetterBody(const ObjCImplementationDecl *classImpl,
 
   PropertyImplStrategy strategy(CGM, propImpl);
   switch (strategy.getKind()) {
+
+
+//  strategy.getKind()
+//  策略类型
+
+
+
+
   case PropertyImplStrategy::Native: {
     // We don't need to do anything for a zero-size struct.
     if (strategy.getIvarSize().isZero())
@@ -1425,6 +1451,8 @@ CodeGenFunction::generateObjCSetterBody(const ObjCImplementationDecl *classImpl,
     llvm::FunctionCallee setPropertyFn = nullptr;
     if (UseOptimizedSetter(CGM)) {
       // 10.8 and iOS 6.0 code and GC is off
+
+      // step two
       setOptimizedPropertyFn =
           CGM.getObjCRuntime().GetOptimizedPropertySetFunction(
               strategy.isAtomic(), strategy.isCopy());

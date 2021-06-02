@@ -264,6 +264,12 @@ public:
     return CGM.CreateRuntimeFunction(FTy, "objc_setProperty");
   }
 
+
+
+
+
+// step 3
+//    看这里
   llvm::FunctionCallee getOptimizedSetPropertyFn(bool atomic, bool copy) {
     CodeGen::CodeGenTypes &Types = CGM.getTypes();
     ASTContext &Ctx = CGM.getContext();
@@ -303,6 +309,10 @@ public:
     else if (atomic && !copy)
       name = "objc_setProperty_atomic";
     else if (!atomic && copy)
+    //  nonatomic , copy
+//    看这里
+
+
       name = "objc_setProperty_nonatomic_copy";
     else
       name = "objc_setProperty_nonatomic";
@@ -1668,6 +1678,9 @@ public:
     return ObjCTypes.getSetPropertyFn();
   }
 
+
+
+// step two
   llvm::FunctionCallee GetOptimizedPropertySetFunction(bool atomic,
                                                        bool copy) override {
     return ObjCTypes.getOptimizedSetPropertyFn(atomic, copy);
@@ -4264,6 +4277,10 @@ llvm::FunctionCallee CGObjCMac::GetPropertySetFunction() {
   return ObjCTypes.getSetPropertyFn();
 }
 
+
+
+
+// 走这里
 llvm::FunctionCallee CGObjCMac::GetOptimizedPropertySetFunction(bool atomic,
                                                                 bool copy) {
   return ObjCTypes.getOptimizedSetPropertyFn(atomic, copy);
