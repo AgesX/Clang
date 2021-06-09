@@ -149,14 +149,15 @@ int main(int argc, const char * argv[]) {
         
         
         
-        // objc_msgSend 汇编
+        // objc_msgSend ， 汇编写的
         
         
         // 汇编特性: 快 （ 因为方法调用，很多 ） + 参数的动态性 ( 参数的不确定性 )
         
         
         
-        // 消息接受者 :  对象 - ISA - 方法( 在类里面 ) - cache_t （ 在缓存里面，寻找方法 ） - methodlist （ 如果在缓存里面，找不到方法  ）
+        // 消息接受者 :  对象 - ISA - 方法( 在类里面 ) - cache_t （ 在缓存里面，寻找方法 ） - methodlist ( 在 bits 里面 )（ 如果在缓存里面，找不到方法  ）
+        
         //                         类方法( 在元类 meta 里面 )
         
         // 消息接受者， 找到真正的寻根路径
