@@ -56,10 +56,22 @@ int main(int argc, const char * argv[]) {
 
         
         objc_msgSend(person,sel_registerName("sayNB"));
-        // =
+        // =,  等价于下面的
         [person sayNB];
         
-        // 消息的接受者还是自己 - 父类 - 请你直接找我的父亲
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // 消息的接受者还是自己
+        // - 父类 - 请你直接找我的 base
         [person sayHello];
         
         
