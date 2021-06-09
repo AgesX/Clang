@@ -129,13 +129,16 @@ int main(int argc, const char * argv[]) {
         
         
         //  imp -> 内容
-        
         //  这一层，都是指针级别
         
         
         
         
         
+        
+        // imp -> 内容
+        // 相当于 C 的底层
+        // c 函数名,        函数地址指针
         
         
         
