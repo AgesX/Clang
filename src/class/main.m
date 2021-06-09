@@ -120,7 +120,7 @@ int main(int argc, const char * argv[]) {
         
         
         // OC 方法 - 消息 (sel imp) sel -> imp -> 内容
-        // sel -> imp
+        // sel -> imp， 通过 sel 方法编号，找到对应的 IMP
         // 难点 + 重点
         
         
@@ -152,12 +152,14 @@ int main(int argc, const char * argv[]) {
         // objc_msgSend 汇编
         
         
-        // 汇编特性: 快 + 参数的动态性 ( 参数的不确定性 )
+        // 汇编特性: 快 （ 因为方法调用，很多 ） + 参数的动态性 ( 参数的不确定性 )
         
         
         
-        // 消息接受者 :  对象 - ISA - 方法(类) - cache_t - methodlist
-        // 消息接受者， 找到真正的寻根露
+        // 消息接受者 :  对象 - ISA - 方法( 在类里面 ) - cache_t （ 在缓存里面，寻找方法 ） - methodlist （ 如果在缓存里面，找不到方法  ）
+        //                         类方法( 在元类 meta 里面 )
+        
+        // 消息接受者， 找到真正的寻根路径
     }
     return 0;
 }
