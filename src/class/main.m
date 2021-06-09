@@ -37,7 +37,20 @@ int main(int argc, const char * argv[]) {
         
         // sel_registerName = @seletor() = NSSeletorFromString()
         
-        // 方法: 消息 : (消息的接受者 . 消息主体)
+        
+        
+        
+        
+        
+        // 方法, 在底层为消息
+        
+        // (消息的接受者 . 消息主体)
+        
+        
+        
+        
+        
+        
         LGPerson *person = [LGPerson alloc];
         LGTeacher *teacher = [LGTeacher alloc];
 
@@ -79,17 +92,26 @@ int main(int argc, const char * argv[]) {
          ((void (*)(id, SEL))(void *)objc_msgSend)((id)person, sel_registerName("sayHello"));
          */
         
+        
+        
+        
+        
+        
         // runtime 三种
+        
+        
         // 方法 objc_msgSend
         // c 函数名
         // OC 方法 - 消息 (sel imp) sel -> imp -> 内容
         // sel -> imp
         // 难点 + 重点
+        
+        
+        
         // objc_msgSend 汇编
         // 汇编特性: 快 + 动态性(不确定)
         // 消息接受者 :  对象 - ISA - 方法(类) - cache_t - methodlist
         
-        NSLog(@"Hello, World!");
     }
     return 0;
 }
