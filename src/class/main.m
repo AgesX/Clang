@@ -113,10 +113,30 @@ int main(int argc, const char * argv[]) {
         
         
         // 方法 objc_msgSend
-        // c 函数名
+        
+        
+        // c 函数名,        函数地址指针
+        
+        
+        
         // OC 方法 - 消息 (sel imp) sel -> imp -> 内容
         // sel -> imp
         // 难点 + 重点
+        
+        
+        
+        
+        
+        
+        //  imp -> 内容
+        
+        //  这一层，都是指针级别
+        
+        
+        
+        
+        
+        
         
         
         
@@ -127,3 +147,10 @@ int main(int argc, const char * argv[]) {
     }
     return 0;
 }
+
+
+
+
+
+
+

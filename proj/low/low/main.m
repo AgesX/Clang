@@ -65,8 +65,18 @@ int main(int argc, const char * argv[]) {
         lgsuper.receiver = person;
         lgsuper.super_class = [LGTeacher class];
         
+        
+        
+        // 类的继承， 调用
         objc_msgSendSuper(&lgsuper, sel_registerName("sayHello"));
+        
+        
+        
         
     }
     return 0;
 }
+
+
+
+
