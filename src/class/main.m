@@ -143,10 +143,21 @@ int main(int argc, const char * argv[]) {
         
         
         
-        // objc_msgSend 汇编
-        // 汇编特性: 快 + 动态性(不确定)
-        // 消息接受者 :  对象 - ISA - 方法(类) - cache_t - methodlist
         
+        
+        
+        
+        
+        
+        // objc_msgSend 汇编
+        
+        
+        // 汇编特性: 快 + 参数的动态性 ( 参数的不确定性 )
+        
+        
+        
+        // 消息接受者 :  对象 - ISA - 方法(类) - cache_t - methodlist
+        // 消息接受者， 找到真正的寻根露
     }
     return 0;
 }
