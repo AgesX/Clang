@@ -65,7 +65,15 @@ do{
         
     // {imp, sel} = *--bucket
     // 缓存的查找的顺序是: 向前查找
+        
+        
+        
+    // 指针平移
+        
+        
     bucket--;
+    
+    
     imp = bucket.imp;
     sel = bucket.sel;
     
@@ -76,3 +84,20 @@ return imp
 
 CheckMiss:
     CheckMiss(normal)
+
+
+
+
+
+/*
+ 
+ 
+ 
+ 漏洞很多
+ 
+ 
+ 
+ md , 不就抄写一下苹果的注释
+ 
+ 
+ */
