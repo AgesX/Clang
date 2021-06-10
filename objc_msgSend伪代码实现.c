@@ -16,9 +16,20 @@ isa_t isa = 0x000000
 // isa -> class -> cache
 cache_t cache = isa + 16字节
 
+
+
+
 // arm64
+
+
 // mask|buckets 在一起的
-buckets = cache & 0x0000ffffffffffff
+
+
+buckets = cache & 0x0000ffffffffffff                //  cache 的 ( uintptr_t _bucketsAndMaybeMask  )      & 0x0000ffffffffffff
+
+
+
+
 // 获取mask
 mask = cache LSR #48
 // 下标 = mask & sel
@@ -32,9 +43,21 @@ int count = 0
 // CheckMiss $0
 do{
 
+    
+    
+    //  bucket == buckets，  相当于查询的是，第一个元素
+    
+    
+    
     if ((bucket == buckets) && (count == 0)){ // 进入第二层判断
-        // bucket == 第一个元素
-        // bucket人为设置到最后一个元素
+        // bucket == 第一个元素,
+        // bucket  人为设置到最后一个元素
+        
+        
+        
+        //  bucket， 重新赋值
+        
+        
         bucket = buckets + mask * 16
         count++;
         
