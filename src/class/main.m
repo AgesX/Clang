@@ -156,7 +156,7 @@ int main(int argc, const char * argv[]) {
         
         
         
-        // 消息接受者 :  对象 - ISA - 方法( 在类里面 ) - cache_t （ 在缓存里面，寻找方法 ） - methodlist ( 在 bits 里面 )（ 如果在缓存里面，找不到方法  ）
+        // 消息接受者 :  对象 - ISA - 方法( 在类里面 ) - cache_t    (     从缓存里面拿 IMP     )  （ 在缓存里面，寻找方法 ） - methodlist ( 在 bits 里面 )（ 如果在缓存里面，找不到方法  ）
         
         //                         类方法( 在元类 meta 里面 )
         
