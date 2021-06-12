@@ -60,7 +60,13 @@ void two(void){
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        
+        
+        
         LGPerson *person = [LGPerson alloc];
+        
+        [person sayNB];
+        
         struct objc_super lgsuper;
         lgsuper.receiver = person;
         lgsuper.super_class = [LGTeacher class];
