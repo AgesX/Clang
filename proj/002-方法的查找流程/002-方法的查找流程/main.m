@@ -27,11 +27,38 @@ int main(int argc, const char * argv[]) {
         
         [LGStudent sayObjc];
         [LGStudent sayHappay];
+        
+        
+        
+        
+        // 竟然没有崩溃
+        
+        
+        // 把类方法，当作实例方法，调用成功
+        
+        
         [LGStudent performSelector:@selector(sayEasy)]; // + 
 
+        
+        // 查找方法
+        // isa
+        // cache
+        // method_list
+        
+        
+        // 类方法， 在元类里面，
+        // 元类， NSObject 元类，  NSObject 类
+        
+        
+        // 元类里面，储存的类方法
+        // 以对象方法的形式
         
 
 #pragma clang diagnostic pop
     }
     return 0;
 }
+
+
+
+
