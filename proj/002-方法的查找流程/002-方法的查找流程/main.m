@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "LGStudent.h"
-
+#import "LGPerson+NO.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {

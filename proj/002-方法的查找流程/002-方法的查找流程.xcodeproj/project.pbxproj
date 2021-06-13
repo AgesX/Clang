@@ -11,6 +11,7 @@
 		04931BFB2517C5490028F798 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04931BFA2517C5490028F798 /* main.m */; };
 		04931C062517C55A0028F798 /* LGPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 04931C032517C55A0028F798 /* LGPerson.m */; };
 		04931C072517C55A0028F798 /* LGStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 04931C052517C55A0028F798 /* LGStudent.m */; };
+		2695D0722676058200CF9A5D /* LGPerson+NO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2695D0712676058200CF9A5D /* LGPerson+NO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		04931C032517C55A0028F798 /* LGPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPerson.m; sourceTree = "<group>"; };
 		04931C042517C55A0028F798 /* LGPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPerson.h; sourceTree = "<group>"; };
 		04931C052517C55A0028F798 /* LGStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGStudent.m; sourceTree = "<group>"; };
+		2695D0702676058200CF9A5D /* LGPerson+NO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LGPerson+NO.h"; sourceTree = "<group>"; };
+		2695D0712676058200CF9A5D /* LGPerson+NO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LGPerson+NO.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +69,8 @@
 		04931BF92517C5490028F798 /* 002-方法的查找流程 */ = {
 			isa = PBXGroup;
 			children = (
+				2695D0702676058200CF9A5D /* LGPerson+NO.h */,
+				2695D0712676058200CF9A5D /* LGPerson+NO.m */,
 				04931BFA2517C5490028F798 /* main.m */,
 				04931C042517C55A0028F798 /* LGPerson.h */,
 				04931C032517C55A0028F798 /* LGPerson.m */,
@@ -137,6 +142,7 @@
 				04931C072517C55A0028F798 /* LGStudent.m in Sources */,
 				04931C062517C55A0028F798 /* LGPerson.m in Sources */,
 				0403717C2518D3C400A63FC5 /* NSObject+LGCate.m in Sources */,
+				2695D0722676058200CF9A5D /* LGPerson+NO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
