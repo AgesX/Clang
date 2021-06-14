@@ -18,7 +18,10 @@ int main(int argc, const char * argv[]) {
         LGStudent *student = [[LGStudent alloc] init];
         // 对象方法
         [student sayHello];
-        [student sayNB];
+        [student sayNB];                        // 调用起来，分类方法覆盖了，类的方法
+        
+        
+        
         // unrecognized selector sent to instance 0x103d32010
         // [student sayMaster];
         

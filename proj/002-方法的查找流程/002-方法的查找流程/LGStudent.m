@@ -7,6 +7,8 @@
 //
 
 #import "LGStudent.h"
+#import <objc/runtime.h>
+
 
 @implementation LGStudent
 - (void)sayHello{
@@ -16,4 +18,34 @@
 + (void)sayObjc{
     NSLog(@"%s",__func__);
 }
+
+
++ (BOOL)resolveInstanceMethod:(SEL)sel{
+    
+    if (sel == @selector(sayMaster)) {
+        NSLog(@"%@ 来了",NSStringFromSelector(sel));
+        
+        IMP imp           = class_getMethodImplementation(self, @selector(sayMaster));
+        Method sayMMethod = class_getInstanceMethod(self, @selector(sayMaster));
+        const char *type  = method_getTypeEncoding(sayMMethod);
+        return class_addMethod(self, sel, imp, type);
+    }
+    
+    return [super resolveInstanceMethod:sel];
+}
+
+// objc_msgSend 快速查找
+// 慢速查找流程
+// 1: 找自己methodlist
+// 2: 找父类methodlist
+// 3: imp : forward
+// 4: 消息处理机制
+// 4.1 : 动态方法决议 - 对象方法
+//
+
+
+
+
+
+
 @end
