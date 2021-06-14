@@ -22,6 +22,14 @@
 
 + (BOOL)resolveInstanceMethod:(SEL)sel{
     
+    
+    
+    // 动态方法决议 / 解析
+    
+    
+    // 查找不到方法 IMP 时，中间有一步可以处理
+    
+    
     if (sel == @selector(sayMaster)) {
         NSLog(@"%@ 来了 -- \n -- ",NSStringFromSelector(sel));
         
@@ -52,9 +60,22 @@
 
 // objc_msgSend 快速查找
 // 慢速查找流程
+
+
+
 // 1: 找自己methodlist
 // 2: 找父类methodlist
+
+
+
+
 // 3: imp : forward
+// 将待返回的 IMP 置换为 forward 类型
+
+
+
+
+
 // 4: 消息处理机制
 // 4.1 : 动态方法决议 - 对象方法
 //
@@ -62,6 +83,12 @@
 
 
 
+// 666: 最后找不到 IMP
+// 无法处理， objc_fatal
 
 
 @end
+
+
+
+
