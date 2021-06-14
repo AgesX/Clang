@@ -22,33 +22,11 @@
 
 + (BOOL)resolveInstanceMethod:(SEL)sel{
     
-    if (sel == @selector(sayMaster)) {
-        NSLog(@"%@ 来了 -- \n -- ",NSStringFromSelector(sel));
-        
-        
-        SEL hello = @selector(sayHello);
-        IMP imp           = class_getMethodImplementation(self, hello);
-        Method sayMMethod = class_getInstanceMethod(self, hello);
-        const char *type  = method_getTypeEncoding(sayMMethod);
-        
-        
-        
-        // 在这里，动态添加方法
-        
-        return class_addMethod(self, sel, imp, type);
-    }
-    
+   
+    NSLog(@"%@ 来了 -- \n -- ",NSStringFromSelector(sel));
     
     return [super resolveInstanceMethod:sel];
 }
-
-
-
-
-
-
-
-
 
 // objc_msgSend 快速查找
 // 慢速查找流程

@@ -56,6 +56,20 @@ int main(int argc, const char * argv[]) {
         // 元类里面，储存的类方法
         // 以对象方法的形式
         
+        
+        
+        
+        ///////
+        
+        
+        
+        ///////
+        
+        
+        
+        
+        // unrecognized selector sent to instance 0x103d32010
+        [student sayMaster];
 
 #pragma clang diagnostic pop
     }
