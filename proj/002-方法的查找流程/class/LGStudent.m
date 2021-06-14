@@ -22,8 +22,14 @@
 
 + (BOOL)resolveInstanceMethod:(SEL)sel{
     
-   
-    NSLog(@"%@ 来了 -- \n -- ",NSStringFromSelector(sel));
+    if (sel == @selector(sayMaster)) {
+        NSLog(@"%@ 来了",NSStringFromSelector(sel));
+        
+        IMP imp           = class_getMethodImplementation(self, @selector(sayMaster));
+        Method sayMMethod = class_getInstanceMethod(self, @selector(sayMaster));
+        const char *type  = method_getTypeEncoding(sayMMethod);
+        return class_addMethod(self, sel, imp, type);
+    }
     
     return [super resolveInstanceMethod:sel];
 }

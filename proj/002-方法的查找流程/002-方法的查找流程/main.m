@@ -23,7 +23,7 @@ int main(int argc, const char * argv[]) {
         
         
         // unrecognized selector sent to instance 0x103d32010
-        // [student sayMaster];
+        [student sayMaster];
         
         
         // 类方法
