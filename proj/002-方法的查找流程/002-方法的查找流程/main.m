@@ -15,6 +15,12 @@ int main(int argc, const char * argv[]) {
 #pragma clang diagnostic push
 // 让编译器忽略错误
 #pragma clang diagnostic ignored "-Wundeclared-selector"
+        
+        
+        
+        [LGStudent terminate];
+        
+        NSLog(@"\\ \n //");
         LGStudent *student = [[LGStudent alloc] init];
         // 对象方法
         [student sayHello];

@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)sayHello;
 - (void)sayMaster;
 + (void)sayObjc;
+
+
+
++ (void)terminate;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -11,6 +11,40 @@
 
 
 @implementation LGStudent
+
+
++ (BOOL)resolveClassMethod:(SEL)sel{
+    
+    
+    NSLog(@"%@ 来了 -      - \n -- ",NSStringFromSelector(sel));
+    if (sel == @selector(terminate)) {
+        
+        Class stu = objc_getMetaClass("LGStudent");
+        SEL hello = @selector(sayObjc);
+        IMP imp           = class_getMethodImplementation(stu, hello);
+        Method sayMMethod = class_getInstanceMethod(stu, hello);
+        const char *type  = method_getTypeEncoding(sayMMethod);
+        
+        
+        
+        // 在这里，动态添加方法
+        
+        return class_addMethod(stu, sel, imp, type);
+        
+    }
+    
+    
+    
+    return [super resolveClassMethod: sel];
+}
+
+
+
+
+
+
+
+
 - (void)sayHello{
     NSLog(@"%s\n￣\n",__func__);
 }
@@ -29,9 +63,9 @@
     
     // 查找不到方法 IMP 时，中间有一步可以处理
     
-    
+    NSLog(@"%@ 来了 -- \n -- ",NSStringFromSelector(sel));
     if (sel == @selector(sayMaster)) {
-        NSLog(@"%@ 来了 -- \n -- ",NSStringFromSelector(sel));
+        
         
         
         SEL hello = @selector(sayHello);
@@ -69,8 +103,16 @@
 
 
 
+
+
+
 // 3: imp : forward
 // 将待返回的 IMP 置换为 forward 类型
+
+// imp = forward_imp;
+
+
+
 
 
 
