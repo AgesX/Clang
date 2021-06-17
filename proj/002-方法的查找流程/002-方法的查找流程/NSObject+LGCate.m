@@ -94,9 +94,40 @@
  
  
  
- 2: 方法 - lg_model_tracffic
-        - lg - model home - 奔溃 - pop Home
-        - lg - mine  - mine
+ 2: 方法 - 套路
+ 
+ 
+ 
+ 方法命名， 开发人名前缀 - 模块名 - 功能名
+ 
+ 
+ 
+ lg_model_tracffic
+ 
+ 
+ 
+ 
+ 非该 prefix 的，不做处理
+ 带有 lg 前缀的，才去 hook
+ 
+ 
+ 
+ 
+ 
+ 
+    例子一
+ - lg -  model home -  找不到方法， 防止奔溃  -    pop Home  返回首页
+ 
+ 
+ 
+ 
+ 例子 2
+        - lg - mine  模块的方法挂了 -  防止奔溃,  返回   mine
+ 
+ 
+ 
+ 
+ 
     切面 - SDK - 上传
  
  
