@@ -28,7 +28,15 @@
 
 
 
+// 子类自己调用方法 resolveInstanceMethod， 的优先级高于
+
+// NSObject 分类的方法 resolveInstanceMethod
+
+
+
 + (BOOL)resolveInstanceMethod:(SEL)sel{
+    
+    // 方法走到这里，就是一种错误信息
     
     
     
@@ -122,24 +130,43 @@
  
  
  例子 2
-        - lg - mine  模块的方法挂了 -  防止奔溃,  返回   mine
+        - lg - mine  模块的方法挂了 -  防止奔溃,  返回   mine 页面
  
  
  
  
  
-    切面 - SDK - 上传
+    切面 -
+封装入 SDK -
+
+
+错误信息  上传
  
  
  
- 3: AOP - 封装SDK - 不处理
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 3: AOP - 封装SDK -
+ 
+ 
+ 在这一层不处理
+ 
+ (       那第 2 条，完全放屁       )
+ 
+ 
  
  
  
  4: 消息转发 -
  
  
- 
+ 通过消息转发 ，来防止崩溃
  
  
  */
