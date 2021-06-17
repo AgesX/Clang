@@ -20,7 +20,7 @@
 
 
 
-// 覆盖 NSObject 的默认实现
+// LG 的说， 重写 NSObject 的默认实现， 不是 覆盖
 
 
 // 调用方法的时候，先找分类的，再找类的
@@ -72,6 +72,47 @@
     
     return NO;
 }
+
+
+
+// 在这里，方法找不到，防崩溃
+
+
+/**
+ 
+ 
+ 
+ 1: 分类 - 便利
+ 
+ 
+ 全局 hook
+ 
+ 全部 hook
+ 
+ 
+ 无侵入埋点
+ 
+ 
+ 
+ 2: 方法 - lg_model_tracffic
+        - lg - model home - 奔溃 - pop Home
+        - lg - mine  - mine
+    切面 - SDK - 上传
+ 
+ 
+ 
+ 3: AOP - 封装SDK - 不处理
+ 
+ 
+ 
+ 4: 消息转发 -
+ 
+ 
+ 
+ 
+ 
+ */
+
 
 
 @end
