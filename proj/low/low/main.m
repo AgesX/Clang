@@ -58,6 +58,54 @@ void two(void){
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  内存， main, 固定的格式， dyld
+
+
+
+
+
+
+//  读取到 rax 寄存器
+
+
+
+
+
+
+
+// main 函数, 汇编写的
+
+
+
+
+
+
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
@@ -82,6 +130,10 @@ int main(int argc, const char * argv[]) {
     }
     return 0;
 }
+
+
+
+
 
 
 
