@@ -32,6 +32,14 @@
 
 @implementation LGPerson
 
+
++ (void)load{
+    
+    
+}
+
+
+
 - (void)sayNB{
     NSLog(@"66  \n 6");
 }
