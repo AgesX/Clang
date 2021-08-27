@@ -2,6 +2,32 @@
 based on LGCooci/llvm
 
 
+<hr>
+
+
+
+<hr>
+
+
+<hr>
+
+
+
+<hr>
+
+
+# 制作出了，自己的编译器
+
+等价于，设计了一门新的编程语言
+
+
+
+<hr>
+
+
+
+<hr>
+
 
 <hr>
 
@@ -86,3 +112,36 @@ auto &Runtime = CGM.getLangOpts().ObjCRuntime;
 
 
 
+
+
+
+<hr>
+
+
+<hr>
+
+
+
+<hr>
+
+
+<hr>
+
+
+
+<hr>
+
+
+<hr>
+
+
+
+
+二进制可执行文件中，
+
+
+一般分为
+
+
+
+指令和数据
