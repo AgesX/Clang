@@ -3,7 +3,23 @@ based on LGCooci/llvm
 
 
 
+<hr>
 
+
+
+<hr>
+
+
+Clang 是 C , Objective - C, Cpp 的编译器前端
+
+
+Swift 是 Swift 的编译器前端
+
+<hr>
+
+
+
+<hr>
 
 
 #### 1, OMF_alloc
