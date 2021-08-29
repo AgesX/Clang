@@ -33,6 +33,40 @@ Declaration  声明
 <hr>
 
 
+CallExpr
+
+
+Call Expression
+
+
+调用语句，
+
+
+调用函数
+
+<hr>
+
+<hr>
+
+
+
+
+
+<hr>
+
+BinaryOperator
+
+
+二元操作符
+
+
+运算符
+
+
+
+<hr>
+
+
 
 
 <hr>
@@ -42,15 +76,32 @@ Declaration  声明
 
 
 
+ParmVarDecl 
+
+
+参数变量声明
+
+
+Parameter Variable Declaration
+
+
+<hr>
+
+
+
 
 <hr>
 
 <hr>
 
 
+DeclRefExpr
 
 
-<hr>
+函数指针
 
-<hr>
 
+声明引用表达式
+
+
+Declaration Reference Expression
