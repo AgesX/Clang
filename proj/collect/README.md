@@ -38,11 +38,20 @@ clang -fmodules -fsyntax-only -Xclang -ast-dump main.m   >> main_ast.m
 
 <hr>
 
+生成 IR
 
 
 
+clang -S -fobjc-arc -emit-llvm main.m
 
 <hr>
+
+
+IR, 
+
+ll
+
+接近汇编
 
 <hr>
 

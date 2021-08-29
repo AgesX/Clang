@@ -124,9 +124,24 @@ auto &Runtime = CGM.getLangOpts().ObjCRuntime;
 
 <hr>
 
+rebase，
+
+
+
+系统的库，
+
+
+
+外部的符号
+
+
 
 <hr>
 
+
+有外部的符号
+
+就需要做一个链接
 
 
 <hr>
